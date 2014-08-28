@@ -1,0 +1,15 @@
+{
+  "name": "ResumeRest",
+  "version": "0.0.1",
+  "description": "Rest API for the Ean Node Resume",  
+  "dependencies": {
+    "express": "3.3.4",
+	"jade": "1.1.5",
+	"mongodb": "1.3.23",
+	"socket.io": "0.9.16"
+  },
+  "scripts": {
+	"start": "node index.js"
+  },
+  "main": "index.js"
+}
