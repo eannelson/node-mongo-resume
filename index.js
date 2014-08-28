@@ -14,6 +14,7 @@ var app = express();
 var port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
 var ip = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
 app.set('port', port);
+app.set('ip', ip);
 app.set('views', path.join(__dirname, 'views')); // where the view templates live
 app.set('view engine', 'jade'); // sets the view engine to jade
 
@@ -114,8 +115,6 @@ app.use(function (req,res) { //1
     res.render('404', {url:req.url}); //2
 });
 
-http.createServer(app).listen(app.get('port'), function() {
-  console.log('Express server listening on port ' + app.get('port'));
-});
+http.createServer(app).listen(app.get('port'), app.get('ip'));
  
 console.log('Server running on port 8080.');
